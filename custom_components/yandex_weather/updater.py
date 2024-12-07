@@ -295,7 +295,7 @@ class WeatherUpdater(DataUpdateCoordinator):
         :raises AssertionError: when response.status is not 200
         """
         headers = {"X-Yandex-API-Key": api_key}
-        url = f"{API_URL}/v{API_VERSION}/forecast?lat={lat}&lon={lon}&lang={lang}"
+        url = f"{API_URL}/v{API_VERSION}/forecast?lat={lat}&lon={lon}"
         _LOGGER.info("Sending API request")
         async with session.get(url, headers=headers) as response:
             try:
